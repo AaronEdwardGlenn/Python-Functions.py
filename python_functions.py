@@ -69,3 +69,32 @@ student_info(courses, info)
 student_info(*courses, **info)  # this gives us our individual list and dictionary
 
 # NOTE conditional args vs kwargs is something to review for later
+
+# adding here some code for the purpose of reviewing the information gone over in the last couple of lecture.
+
+# we are adding 'doc strings' here. using the """ sign between comments we can describe what the code is accomplishing
+
+month_days = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
+
+
+def is_leap(year):
+
+    return year % 4 == 0 and (year % 100 != 0 or year % 400 == 0)
+    """Return True for leap years, False for non-leap years."""
+
+
+def days_in_month(year, month):
+    """Return number of days in that month in that year."""
+
+    if not 1 <= month <= 12:
+        return 'Invalid Month'
+
+    if month == 2 and is_leap(year):
+        return 29
+
+    return month_days[month]
+# NOTE important! tabs must be absolutely correct for this to work
+
+
+print(is_leap(2020))
+print(days_in_month(2017, 7))
